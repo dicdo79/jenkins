@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     triggers {
-        pollSCM('*/3 * * * *')
+        pollSCM('*/3 * * * *') // 3분 주기로 트리거
     }
 
     environment {
@@ -21,9 +21,9 @@ pipeline {
             steps {
                 echo 'Clonning Repository'
 
-                git url: 'https://github.com/frontalnh/temp.git',
-                    branch: 'master',
-                    credentialsId: 'jenkinsgit'
+                git url: 'https://github.com/dicdo79/jenkins.git',
+                    branch: 'main',
+                    credentialsId: 'GitTokens'
             }
 
             post {
