@@ -140,7 +140,6 @@ pipeline {
 
             dir ('./server'){
                 sh '''
-                docker rm -f $(docker ps -aq)
                 docker run -p 80:80 -d server
                 '''
             }
@@ -148,7 +147,7 @@ pipeline {
 
           post {
             success {
-              mail  to: 'frontalnh@gmail.com',
+              mail  to: 'pwd99097@gmail.com',
                     subject: "Deploy Success",
                     body: "Successfully deployed!"
                   
